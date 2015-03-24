@@ -1,12 +1,13 @@
 package com.sct.web;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sct.vo.InvestorVO;
+import com.sct.data.service.InvestorDataService;
+import com.sct.entity.Investor;
 /**
  * This is a SpringFramework implementation of REST
  * will be exposed as <code>/investors</code> context.
@@ -15,11 +16,12 @@ import com.sct.vo.InvestorVO;
  */
 @RestController
 public class InvestorController {
+	@Autowired
+	private InvestorDataService investorDataService;
+	
 	@RequestMapping( "investors")
-	public List<InvestorVO> getInvestors(){
-		List<InvestorVO> investors = new ArrayList<InvestorVO>();
-		investors.add(new InvestorVO("account1"));
-		return investors;
+	public List<Investor> getInvestors(){
+		return investorDataService.findAll();
 	}
 }
      
