@@ -1,5 +1,0 @@
-<Context>
-  <Resource name="jdbc/SctWebDB" auth="Container"
-            type="javax.sql.DataSource"
-     description="Sct Web database"/>
-</Context>

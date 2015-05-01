@@ -5,7 +5,7 @@
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-			<property name="hibernate.connection.datasource" value="java:comp/env/jdbc/sctWebDB"/>
+			<property name="hibernate.connection.datasource" value="java:comp/env/jdbc/SctWebDB"/>
 		</properties>
 
 	</persistence-unit>
