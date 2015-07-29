@@ -1,10 +1,21 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:jsf="http://xmlns.jcp.org/jsf">
-<head>
-	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css"/>
-</head>
-<body>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      >
+<h:head>
+	<h:outputScript library="js" name="jquery-1.11.3.min.js"/>
+	<h:outputStylesheet library="css" name="main.css"/>
+</h:head>
+<h:body>
+<script type="text/javascript">
+ 
+$(document).ready(function(){
+ $("#msgid").html("This is Hello World by JQuery");
+});
+ 
+</script>
 	<div id="wrapper">
 		<!-- the header navigation -->
 		<div id="header">
@@ -51,5 +62,5 @@
 			<p>footer</p>
 		</div>		
 	</div>
-</body>
+</h:body>
 </html>
