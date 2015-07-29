@@ -26,7 +26,7 @@ body{
 	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
 	color: #888;
 	display: block;
-	margin: 8px 22px 8px 22px;
+	margin: 8px 22px 0px 22px;
 	overflow: hidden;
 	width: 90%; 	
 }
@@ -176,16 +176,28 @@ body{
   visibility: visible;
 } 	
 #content{
-	margin-top: 58px;
-	margin-right: 10px;
-	float: right;
-	width: 90%;
+	background-color: #fff;
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #888;
+	display: block;
+	margin: 0px 32px 0px 32px;
+	overflow: hidden;
+	width: 848px;		
 }
 #footer{
-	float: left;
-	margin-top: 20px;
+	background-color: #fff;
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #888;
+	display: block;
+	margin: 0px 32px 0px 32px;
+	overflow: hidden;
+	width: 848px;	
+}
+p{
 	margin-right: 10px;
 	margin-left: 10px;
-	clear: both;
-	width: 90%;
 }

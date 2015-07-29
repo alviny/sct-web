@@ -6,13 +6,43 @@
       >
 <h:head>
 	<h:outputScript library="js" name="jquery-1.11.3.min.js"/>
+	<h:outputScript library="js" name="Chart.min.js"/>
 	<h:outputStylesheet library="css" name="main.css"/>
 </h:head>
 <h:body>
 <script type="text/javascript">
  
 $(document).ready(function(){
- $("#msgid").html("This is Hello World by JQuery");
+	var ctx = $("#stocksChart").get(0).getContext("2d");
+
+	var data = {
+		    labels: ["January", "February", "March", "April", "May", "June", "July"],
+		    datasets: [
+		        {
+		            label: "My First dataset",
+		            fillColor: "rgba(220,220,220,0.2)",
+		            strokeColor: "rgba(220,220,220,1)",
+		            pointColor: "rgba(220,220,220,1)",
+		            pointStrokeColor: "#fff",
+		            pointHighlightFill: "#fff",
+		            pointHighlightStroke: "rgba(220,220,220,1)",
+		            data: [65, 59, 80, 81, 56, 55, 40]
+		        },
+		        {
+		            label: "My Second dataset",
+		            fillColor: "rgba(151,187,205,0.2)",
+		            strokeColor: "rgba(151,187,205,1)",
+		            pointColor: "rgba(151,187,205,1)",
+		            pointStrokeColor: "#fff",
+		            pointHighlightFill: "#fff",
+		            pointHighlightStroke: "rgba(151,187,205,1)",
+		            data: [28, 48, 40, 19, 86, 27, 90]
+		        }
+		    ]
+		};
+			
+	var myLineChart = new Chart(ctx).Line(data, {});
+	
 });
  
 </script>
@@ -22,33 +52,6 @@ $(document).ready(function(){
 			<div id="navigation">
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/">home</a></li>
-					<li><a href="#">members</a>
-						<div>
-							<ul>
-								<li>
-									<a href="#">class protocol</a>
-								</li>
-								<li>
-									<a href="#">rules and regulations</a>
-								</li>
-								<li>
-									<a href="#">colour ranks</a>
-									<div>
-										<ul>
-											<li><a href="#">hand motions</a></li>
-											<li><a href="#">foot techniques</a></li>
-											<li><a href="#">testing requirements</a></li>
-											<li><a href="#">frequently asked questions</a></li>
-											<li><a href="#">testing fees</a></li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<a href="#">helpful tips</a>
-								</li>								
-							</ul>
-						</div>
-					</li>
 					<li><a href="#">about</a></li>
 					<li><a href="#">contact us</a></li>
 				</ul>
@@ -56,7 +59,7 @@ $(document).ready(function(){
 		</div>
 		<!-- the content -->
 		<div id="content">
-			<p>content</p>
+			<p><canvas id="stocksChart" width="800" height="400"></canvas></p>
 		</div>
 		<div id="footer">
 			<p>footer</p>
