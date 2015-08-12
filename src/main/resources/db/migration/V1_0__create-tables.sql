@@ -8,6 +8,7 @@ create table trade (
 	symbol VARCHAR(20) NOT NULL,
 	trade_date TIMESTAMP NOT NULL,
 	price DOUBLE(7,3) NOT NULL,
+	volume INT NOT NULL,
 	PRIMARY KEY(id)
 );
 create table address (

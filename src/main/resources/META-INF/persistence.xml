@@ -3,6 +3,7 @@
 	<persistence-unit name="sct-web">
 		<class>com.sct.entity.Investor</class>
 		<class>com.sct.entity.Trade</class>
+		<class>com.sct.entity.TradeEntry</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>

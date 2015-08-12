@@ -6,6 +6,7 @@ public class TradeVO {
 	private Date tradeDate;
 	private String symbol;
 	private double price;
+	private int volume;
 	public Date getTradeDate() {
 		return tradeDate;
 	}
@@ -23,6 +24,12 @@ public class TradeVO {
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	public int getVolume() {
+		return volume;
+	}
+	public void setVolume(int volume) {
+		this.volume = volume;
 	}
 	
 }

@@ -11,6 +11,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 @Entity
 @Table(name="trade")
 public class Trade {
@@ -19,7 +22,7 @@ public class Trade {
 	private Long id;
 	
 	@NotNull
-	@Size(min=3 , max=5)
+	@Size(min=3 , max=5)      
 	@Column(name="symbol")
 	private String symbol;
 	
@@ -29,6 +32,9 @@ public class Trade {
 	@Column(name="price")
 	private double price;
 
+	@Column(name="volume")
+	private int volume;
+	
 	public Long getId() {
 		return id;
 	}
@@ -44,7 +50,7 @@ public class Trade {
 	public void setSymbol(String symbol) {
 		this.symbol = symbol;
 	}
-
+	@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	public Date getTradeDate() {
 		return tradeDate;
 	}
@@ -59,6 +65,14 @@ public class Trade {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public int getVolume() {
+		return volume;
+	}
+
+	public void setVolume(int volume) {
+		this.volume = volume;
 	}
 	
 }

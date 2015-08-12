@@ -6,10 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sct.data.service.InvestorDataService;
 import com.sct.data.service.TradeDataService;
-import com.sct.entity.Investor;
 import com.sct.entity.Trade;
+import com.sct.entity.TradeEntry;
 
 @RestController
 public class TradeController {
@@ -19,5 +18,9 @@ public class TradeController {
 	@RequestMapping( "trades")
 	public List<Trade> getInvestors(){
 		return tradeDataService.findAll();
+	}
+	@RequestMapping( "list")
+	public List<TradeEntry> getList(){
+		return tradeDataService.list();
 	}
 }
